@@ -1,0 +1,29 @@
+# Crear base de datos "taller" mediante pgAdmin3
+
+# Agregar la extension postgis
+
+```sql
+    CREATE EXTENSION postgis;
+```
+
+# Importar tablas
+
+```shell
+    psql -U postgres -d taller -f scripts/provincias.sql
+    
+    psql -U postgres -d taller -f scripts/departamentos.sql
+    
+```
+
+# Abrir el shapes shapes/bahra.shp mediante QGIS
+    Añadir capa vectorial > archivo
+
+# Importar la capa a nuestra base localhost mediante el plugin "Administrador de BBDD"
+ - Base de datos > Administrador de BBDD > Administrador de BBDD
+    Postgis > taller > public > importar
+        tabla: ciudades
+        clave primaria: id
+        columna de geometria: geom
+        
+        
+ 
