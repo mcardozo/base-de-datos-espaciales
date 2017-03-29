@@ -1,3 +1,72 @@
+# Instalacion PostgreSQl
+
+- Conocer mis distribucion
+```shell
+    $  lsb_release -a
+```
+
+- Ejemplo Xenial
+
+```shell
+    sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
+```
+
+- Agregar clave pública del repositorio:
+
+```shell
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
+
+- Actualizar repositorios e instalar PostgreSQL 9.6 y Postgis 2.3:\
+
+```shell
+    $ sudo apt-get update
+    $ sudo apt-get install postgresql-9.6 postgresql-9.6-postgis-2.3
+```
+
+- Crear la contraseña por defecto del usuario postgres:
+
+```shell
+    # su - postgres 
+    $ psql 
+    postgres=# ALTER ROLE postgres WITH PASSWORD 'postgres'; 
+    postgres=# \q
+```
+
+- Habilitar el acceso por contraseña:\
+- Abrir el archivo pg_hba.conf
+
+```shell
+    $ sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+
+```
+
+- Cambiar el método de acceso:
+
+```
+    local all postgres peer
+
+    local all all peer
+```
+
+por 
+
+```
+    local all postgres md5
+
+    local all all md5
+```
+
+- Reiniciar el servicio
+
+```shell
+    $ sudo service postgresql restart
+```
+
+# Instalar QGIS
+
+    http://www.qgis.org/es/site/forusers/alldownloads.html#debian-ubuntu
+
 # Crear base de datos "taller" mediante pgAdmin3
 
 # Agregar la extension postgis
