@@ -71,82 +71,95 @@
 			</div>
 			<div id="/section-1/page-4" class="ft-page" data-id="page-4">
 				<h1>Tipos de datos espaciales</h1>
-				<div class="ft-fragment stack-center"><img class="stacked-center" src="assets/img/tipo-de-datos-espaciales.png" style="margin-top: 0px;"></div>
+				<p class="ft-fragment">Los tipos de datos espaciales se organizan en una jerarquía de tipos</p>
+				<div class="stack-center">
+					<img class="stacked-center ft-fragment" src="assets/img/tipo-de-datos-espaciales.png" style="margin-top: 120px;" width="50%">
+				</div>
 			</div>
 			<div id="/section-1/page-5" class="ft-page" data-id="page-5">
 				<h1>Funciones espaciales</h1>
 				<p class="ft-fragment">Una función es un conjunto de líneas de código que realizan una tarea específica</p>
-				<pre class="ft-fragment"><code class="language-markup">SELECT ST_AsText() -- gjflkjg</code></pre>
-				<pre class="ft-fragment"><code class="language-markup">SELECT ST_Distance()</code></pre>
-				<pre class="ft-fragment"><code class="language-markup">SELECT ST_AsGeoJSON()</code></pre>
+				<p class="ft-fragment">Una base de datos espacial proporciona funciones para el análisis de componentes geométricos</p>
+				<ul>
+					<li class="ft-fragment">Relaciones espaciales</li>
+					<li class="ft-fragment">Manipulación de geometrías</li>
+				</ul>
+				<pre class="ft-fragment"><code class="language-markup">ST_AsText(geography) devuelve text</code></pre>
+				<pre class="ft-fragment"><code class="language-markup">ST_Distance(geography, geography) devuelve double</code></pre>
+				<pre class="ft-fragment"><code class="language-markup">ST_AsGeoJson(geography) devuelve text</code></pre>
 			</div>
 			<div id="/section-1/page-6" class="ft-page" data-id="page-6">
 				<h1>Índices espaciales</h1>
+				<p class="ft-fragment">Un índice es un método</p>
+				<p class="ft-fragment">Los índice permiten un rápido acceso a un subconjunto de datos</p>
+				<p class="ft-fragment">Una base datos estándar se hace generalmente con índices B-tree, no es eficiente para indexar polígonos</p>
+				<p class="ft-fragment">Un "índice espacial" que responde a la pregunta:</p>
+				<p class="ft-fragment">¿qué objetos están dentro de este cuadro delimitador?</p>
+			</div>
+			<div id="/section-1/page-7" class="ft-page" data-id<pre class="ft-fragment"><code class="language-markup">ST_AsText(geography) devuelve text</code></pre>="page-7">
+				<ul>
+					<li>Un cuadro delimitador es el rectángulo de tamaño más pequeño capaz de contener un determinado elemento.</li>
+					<li>R-Tree</li>
+				</ul>
+				<div class="stack-center">
+					<img class="stacked-center ft-fragment" src="assets/img/bounding-box.png" style="margin-top: 120px;" width="80%">
+				</div>
 			</div>
 		</div>
 		<div class="ft-section" data-id="section-2">
 			<div id="/section-2/page-1" class="ft-page" data-id="page-1">
-				<h1>Mastering the Navigation</h1>
-				<p>You can navigate in many ways. The most common way is using the keyboard.</p>
-				<h3>Navigation Keys and default behaviours:</h3>
+				<h1>¿Qué es PostgreSQL?</h1>
 				<ul>
-					<li><strong>Down Key</strong> goes to the next page or shows up the next fragment (we’ll see this later).</li>
-					<li><strong>Up Key</strong> goes to the previous page or hides the fragment.</li>
-					<li><strong>Right Key</strong> goes to the adjacent page in the next section <span class="small">(if available, it’s like a grid, otherwise it goes to the last page in the next section).</span></li>
-					<li><strong>Left Key</strong> goes to the adjacent page in the previous section.</li>
+					<li class="ft-fragment">Potente sistema de gestión de base de datos objeto-relacional (ORDBMS).</li>
+					<li class="ft-fragment">Liberado bajo una licencia BSD y, por tanto es software libre y de código abierto.</li>
+					<li class="ft-fragment">Comunidad global de desarrolladores y empresas que lo desarrollan.</li>
+					<li class="ft-fragment">Diseñado desde el principio con la extensión de tipo en mente</li>
 				</ul>
 			</div>
 			<div id="/section-2/page-2" class="ft-page" data-id="page-2">
-				<h1>Alternate Navigation Control</h1>
-				<p>Pressing the <strong>Shift Key</strong> you can alternate the the default navigation keys behaviour; let’s see how:</p>
+				<h1>¿Por qué PostgreSQL?</h1>
 				<ul>
-					<li><strong>Down Key</strong> goes to the next page skipping all the fragments.</li>
-					<li><strong>Up Key</strong> goes to the previous page skipping all the fragments.</li>
-					<li><strong>Right Key</strong> goes to the first page in the next section.</li>
-					<li><strong>Left Key</strong> goes to the first page in the previous section.</li>
+					<li class="ft-fragment">Una demostrada fiabilidad e integridad transaccional por defecto (ACID)</li>
+					<li class="ft-fragment">Cuidadoso soporte para los estándares SQL (completo SQL92)</li>
+					<li class="ft-fragment">Complementos de extensión de tipos y funciones</li>
+					<li class="ft-fragment">Un modelo de desarrollo orientado a la Comunidad</li>
+					<li class="ft-fragment">No hay límite en el tamaño de columna que soportan grandes objetos SIG</li>
+					<li class="ft-fragment">Estructura de índice genérico (GIST) para permitir índices R-Tree</li>
+					<li class="ft-fragment">Es fácil añadir funciones personalizadas</li>
 				</ul>
+				<p class="ft-fragment"><a href="https://www.postgresql.org/" target="_blank">Página oficial</a></p>
 			</div>
 			<div id="/section-2/page-3" class="ft-page" data-id="page-3">
-				<h1>Some Other Keys</h1>
-				<p>Because: the more, the better.</p>
-				<ul>
-					<li><strong>Page Up Key</strong> goes to the first page of the current section.</li>
-					<li><strong>Page Down Key</strong> goes to the last page of the current section.</li>
-					<li><strong>Home Key</strong> goes to the first page of the first section.</li>
-					<li><strong>End Key</strong> goes to the last page of the last section.</li>
-				</ul>
+				<div class="stacked-center">
+					<h1>¿Qué es PostGIS?</h1>
+					<p class="ft-fragment">PostGIS convierte el sistema de gestión de bases de datos <strong>PostgreSQL</strong> en una base de datos espacial.</p>
+					<div class="stack-center">
+						<img class="stacked-center ft-fragment" src="assets/img/postgis.png" style="margin-top: 120px;" width="50%">
+					</div>
+				</div>
 			</div>
 			<div id="/section-2/page-4" class="ft-page" data-id="page-4">
-				<h1>Overview Mode.</h1>
-				<p>You can look at the entire presentation by pressing <strong>ESC Key</strong>.<br>
-					When in Overview Mode you can go back to the Page Mode by pressing again the ESC Key.</p>
-				<p>Try it out!</p>
-				<p><strong class="attention">WARNING! Experimental Feature.</strong> If you experience problems in webkit browser you can use the alternate Overview Mode; see the <a href="https://github.com/marcolago/flowtime.js" target="_blank">documentation</a> for more info.</p>
+				<h1>Postgis</h1>
+				<ul>
+					<li class="ft-fragment">Desarrollado por Refractions Research como proyecto de software libre bajo licencia GPL</li>
+					<li class="ft-fragment">Escrito en lenguaje C, C++ y PL/PgSQL. Utiliza las librerías de software libre GEOS y proj4</li>
+					<li class="ft-fragment">Incorpora un modelo de topología parecido a la estructura arco-nodo de ArcInfo WorkStation</li>
+					<li class="ft-fragment">Soporte de datos raster</li>
+				</ul>
+				<pre class="ft-fragment"><code class="language-markup">CREATE EXTENSION postgis;</code></pre>
+				<pre class="ft-fragment"><code class="language-markup">SELECT postgis_full_version();</code></pre>
+				<p class="ft-fragment"><a href="http://postgis.net/" target="_blank">Página oficial</a></p>
 			</div>
 			<div id="/section-2/page-5" class="ft-page" data-id="page-5">
-				<h1>Navigating the Overview</h1>
-				<p>In Overview Mode the arrow keys works in the same way as in Page Mode, highlighting the future destination. To navigate to the highlighted page just press <strong>Return or Enter Key</strong> or click on the desired page.</p>
-			</div>
-			<div id="/section-2/page-6" class="ft-page" data-id="page-6">
-				<h1>Navigate via Links or Javascript API</h1>
-				<p>You can links every page by simply building the <code>href</code> value using this schema:</p>
-				<pre><code class="language-markup">
-&lt;a href="#/[section data-id attribute]/[page data-id attribute]"&gt;
-				</code></pre>
-				<p>Where <code>data-id</code> attribute is an optional attribute you can add to every section or page.<br>
-					I.e.: if you want to go to back to the first page <a href="#/section-1/page-1">click here</a> <span class="small">(press <strong>backspace</strong> to come back to this page)</span>.</p>
-				<p>You can also trigger every navigation behaviour using the <strong>Flowtime.js Javascript API</strong>.<br>Take a look at the <a href="https://github.com/marcolago/flowtime.js" target="_blank">documentation</a> if you want to learn more.</p>
-			</div>
-			<div id="/section-2/page-7" class="ft-page" data-id="page-7">
-				<h1>Navigate With History</h1>
-				<p>Flowtime.js offers a full support for the HTML5 History API where available or gracefully degrades on the hashchange event.</p>
-				<p>This means that you can navigate using the browser’s back and forward buttons and deeplink a page for sharing purposes.</p>
-			</div>
-			<div id="/section-2/page-8" class="ft-page" data-id="page-8">
-				<h1>Progress Indicator</h1>
-				<p>You can enable a default progress indicator useful not only to know what’s the current page you are looking, but also as a navigation tool.</p>
-				<p><strong>Look at the bottom right corner</strong> and you can see a miniature of the presentation structure.</p>
-				<p>Clicking on a page thumb will navigate to that page.</p>
+				<h1>¿Qué aplicaciones son compatibles con PostGIS?</h1>
+				<p class="ft-fragment">Los programas que soportan PostGIS incluyen tanto:</p>
+				<ul>
+					<li class="ft-fragment">Software de código abierto como software propietario</li>
+					<li class="ft-fragment">En el servidor y en sistemas de escritorio</li>
+				</ul>
+				<div class="stack-center">
+					<img class="stacked-center ft-fragment" src="assets/img/apps-postgis.png" style="margin-top: 245px;" width="40%">
+				</div>
 			</div>
 		</div>
 
