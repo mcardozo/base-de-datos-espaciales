@@ -90,11 +90,11 @@
 			</div>
 			<div id="/section-1/page-6" class="ft-page" data-id="page-6">
 				<h1>Índices espaciales</h1>
-				<p class="ft-fragment">Un índice es un método</p>
-				<p class="ft-fragment">Los índice permiten un rápido acceso a un subconjunto de datos</p>
-				<p class="ft-fragment">Una base datos estándar se hace generalmente con índices B-tree, no es eficiente para indexar polígonos</p>
+				<p class="ft-fragment">Un índice es un método de acceso.</p>
+				<p class="ft-fragment">Los índice permiten un rápido acceso a un subconjunto de datos.</p>
+				<p class="ft-fragment">Una base datos espacial se hace generalmente con índices R-tree.</p>
 				<p class="ft-fragment">Un "índice espacial" que responde a la pregunta:</p>
-				<p class="ft-fragment"><strong>¿Qué objetos están dentro de este cuadro delimitador?</strong></p>
+				<p class="ft-fragment" style="margin-left:150px;"><strong>¿Qué objetos están dentro de este cuadro delimitador?</strong></p>
 			</div>
 			<div id="/section-1/page-7" class="ft-page" data-id="page-7">
 				<ul>
@@ -110,7 +110,7 @@
 			<div id="/section-2/page-1" class="ft-page" data-id="page-1">
 				<h1>¿Qué es PostgreSQL?</h1>
 				<ul>
-					<li class="ft-fragment">Potente sistema de gestión de base de datos objeto-relacional (ORDBMS).</li>
+					<li class="ft-fragment">Potente sistema de gestión de base de datos objeto-relacional.</li>
 					<li class="ft-fragment">Liberado bajo una licencia BSD y, por tanto es software libre y de código abierto.</li>
 					<li class="ft-fragment">Comunidad global de desarrolladores y empresas que lo desarrollan.</li>
 					<li class="ft-fragment">Diseñado desde el principio con la extensión de tipo en mente</li>
@@ -122,13 +122,13 @@
 			<div id="/section-2/page-2" class="ft-page" data-id="page-2">
 				<h1>¿Por qué PostgreSQL?</h1>
 				<ul>
-					<li class="ft-fragment">Una demostrada fiabilidad e integridad transaccional por defecto (ACID)</li>
-					<li class="ft-fragment">Cuidadoso soporte para los estándares SQL (completo SQL92)</li>
-					<li class="ft-fragment">Complementos de extensión de tipos y funciones</li>
-					<li class="ft-fragment">Un modelo de desarrollo orientado a la Comunidad</li>
-					<li class="ft-fragment">No hay límite en el tamaño de columna que soportan grandes objetos SIG</li>
-					<li class="ft-fragment">Estructura de índice genérico (GIST) para permitir índices R-Tree</li>
-					<li class="ft-fragment">Es fácil añadir funciones personalizadas</li>
+					<li class="ft-fragment">Una demostrada fiabilidad e integridad transaccional por defecto.</li>
+					<li class="ft-fragment">Cuidadoso soporte para los estándares SQL.</li>
+					<li class="ft-fragment">Complementos de extensión de tipos y funciones.</li>
+					<li class="ft-fragment">Un modelo de desarrollo orientado a la Comunidad.</li>
+					<li class="ft-fragment">No hay límite en el tamaño de columna que soportan grandes objetos SIG.</li>
+					<li class="ft-fragment">Estructura de índice genérico (GIST) para permitir índices R-Tree.</li>
+					<li class="ft-fragment">Es fácil añadir funciones personalizadas.</li>
 				</ul>
 				<p class="ft-fragment"><a href="https://www.postgresql.org/" target="_blank">Página oficial</a></p>
 			</div>
@@ -144,10 +144,10 @@
 			<div id="/section-2/page-4" class="ft-page" data-id="page-4">
 				<h1>Postgis</h1>
 				<ul>
-					<li class="ft-fragment">Desarrollado por Refractions Research como proyecto de software libre bajo licencia GPL</li>
-					<li class="ft-fragment">Escrito en lenguaje C, C++ y PL/PgSQL. Utiliza las librerías de software libre GEOS y proj4</li>
-					<li class="ft-fragment">Incorpora un modelo de topología parecido a la estructura arco-nodo de ArcInfo WorkStation</li>
-					<li class="ft-fragment">Soporte de datos raster</li>
+					<li class="ft-fragment">Desarrollado por <a href="http://www.refractions.net/" target="_blank">Refractions Research</a> como proyecto de software libre bajo licencia GPL.</li>
+					<li class="ft-fragment">Escrito en lenguaje C, C++ y PL/PgSQL. Utiliza las librerías de software libre GEOS y proj4.</li>
+					<li class="ft-fragment">Incorpora un modelo de topología parecido a la estructura arco-nodo de ArcInfo WorkStation.</li>
+					<li class="ft-fragment">Soporte de datos <a href="http://docs.qgis.org/2.6/es/docs/gentle_gis_introduction/raster_data.html" target="_blank">raster</a>.</li>
 				</ul>
 				<pre class="ft-fragment"><code class="language-markup">CREATE EXTENSION postgis;</code></pre>
 				<pre class="ft-fragment"><code class="language-markup">SELECT postgis_full_version();</code></pre>
@@ -166,11 +166,16 @@
 			</div>
 			<div id="/section-2/page-6" class="ft-page" data-id="page-6">
 				<h1>Clientes SQL</h1>
-				<p class="ft-fragment">Cliente de texto: psql</p>
+				<h2 class="ft-fragment">Cliente de texto: psql</h2>
 				<pre class="ft-fragment"><code class="language-markup">$ psql -h localhost -U postgres -p 5432</code></pre>
-				<p class="ft-fragment">Cliente gráfico: pg Admin III</p>
+				<p class="ft-fragment">Ejemplo de copia de seguridad:</p>
+				<pre class="ft-fragment"><code class="language-markup">$ pg_dump -h localhost -U postgres -d midb -F p -f /directorio/midb.dump</code></pre>
+				<pre class="ft-fragment"><code class="language-markup">$ psql -h localhost -U postgres -d midb -f /directorio/midb.dump</code></pre>
+			</div>
+			<div id="/section-2/page-7" class="ft-page" data-id="page-7">
+				<h2>Cliente gráfico: pg Admin III</h2>
 				<div class="stack-center">
-					<img class="stacked-center ft-fragment" src="assets/img/pgadmin3.png" style="margin-top: 245px;" width="30%">
+					<img class="stacked-center ft-fragment" src="assets/img/pgadmin3.png" style="margin-top: 80px;" width="50%">
 				</div>
 			</div>
 		</div>
